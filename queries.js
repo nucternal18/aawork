@@ -2,27 +2,31 @@ require('dotenv').config()
 const pg = require("pg");
 
 const config = {
-  user: process.env.POSTGRES_USER,
+  user: 'postgres',
   host: process.env.POSTGRES_HOST,
   database: process.env.POSTGRES_DB,
-  password: process.env.POSTGRES_PASSWORD,
+  password: 'password1',
   port: process.env.POSTGRES_PORT
 };
 // process.env refers to environment variable values. Docker-Compose sets the environment variables we've created in the .envs folder.
 
 const pool = new pg.Pool(config);
 
-const getUsers = (request, response) => {
-  pool.query("SELECT * FROM users", (error, results) => {
-    if (error) {
-      console.log(pool);
-      throw error;
-    }
-    response.status(200).json(JSON.stringify(results.rows));
-  });
+const getUsers = async (request, response) => {
+  try {
+    const users = await pool.query("SELECT * FROM users");
+    response.json(users.rows)
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 const setUser = (request, response) => {
+  try {
+    
+  } catch (error) {
+    
+  }
   const { username, info } = request.body;
   pool.query(
     `INSERT INTO users (username, info) VALUES ('${username}', '${info}')`,
