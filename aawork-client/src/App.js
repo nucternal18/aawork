@@ -1,18 +1,27 @@
 import React from 'react';
-import { Admin, Resource } from 'react-admin';
-import jsonServerProvider from 'ra-data-json-server';
-import { UserList } from './users';
+import {Route, Switch} from 'react-router-dom';
+import TicketPage from './pages/Tickets-page';
+import Signin from './pages/signin';
+import Signup from './pages/signup'
+import Home from './pages/Home';
+import Header from './components/header';
 
 import './App.css';
 
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 
 const App = () => {
-  return (
-    <Admin dataProvider={dataProvider}>
-      <Resource name='users' list={UserList} />
-    </Admin>
-  );
-}
-
-export default App;
+    return (
+      <>
+       <div >
+         <Switch>
+           <Route exact path='/' component={Home} /> 
+           <Route exact path='/dashboard' component={TicketPage} />
+           <Route path='/signin' component={Signin} />
+           <Route path='/signup' component={Signup} />
+         </Switch>
+       </div>
+      </>
+    );
+  }
+  
+  export default App;
