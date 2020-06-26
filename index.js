@@ -1,34 +1,24 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const dotenv = require('dotenv')
 const cors = require("cors");
-const db = require("./queries"); // These are our DB query functions.
+const cookieParser = require("cookie-parser")
+// Load config
+dotenv.config({ path: './config/config.env'});
+
+const router = require('./routes/auth');
 
 const app = express();
+// Cookie parser
+app.use(cookieParser());
+
 const port = 5000; // We run our backend on this port.
-
-app.listen(port, () => console.log(`Server listening on port ${port}!`));
-
-// const clientHost = `http://${process.env.CLIENT_HOST}`; // for local and docker-compose development
-// // process.env refers to environment variable values. Docker-Compose sets the environment variables we've created in the .envs folder.
-
-// const whitelist = [clientHost];
-
-// const corsOptions = {
-//   origin(origin, callback) {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true);
-//     } else {
-//       console.log(origin);
-//       callback(new Error("Not allowed by CORS"));
-//     }
-//   }
-// };
 
 app.use(cors()); // allow cors
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // These are the paths used to perform various actions.
-app.get("/api/get-users", db.getUsers);
-app.post("/api/set-user", db.setUser);
-app.post("/api/update-user", db.updateUser);
-app.post("/api/delete-user", db.deleteUser);
+app.use('/api', require('./routes/auth'));
+
+app.listen(port, () => console.log(`Server listening on port ${port}!`));
