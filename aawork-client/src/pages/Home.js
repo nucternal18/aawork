@@ -9,7 +9,9 @@ function Home () {
             <LoginForm>
             <LoginFormH1>Welcome</LoginFormH1>
 
-            <LogButton><Link to="/signin">Login</Link></LogButton>
+            <Link to="/signin">
+            <LogButton>Login</LogButton>
+            </Link>
 
             <BottomTxt>
                 Don't have an account? <Link to="/signup">Sign Up</Link>
