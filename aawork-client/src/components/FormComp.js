@@ -26,7 +26,7 @@ padding: 80px 0;
 background-image: linear-gradient(120deg, #3498db, #ebf7ff);
 `;
 
-const LoginForm = styled.div`
+const LoginForm = styled.form`
   width: 360px;
   height: 580px;
   padding: 40px 40px;
@@ -38,7 +38,7 @@ const LoginFormH1 = styled.h1`
   margin-bottom: 60px;
 `;
 
-const SigninForm = styled.div`
+const SigninForm = styled.form`
   width: 360px;
   margin: 0 auto;
   
@@ -113,10 +113,11 @@ height: 40px;
     &fsafter {
       width: 100%;
     }
-    `;
+`;
 
-
-
+const Error = styled.div`
+    background-color: red;
+`;
 
 const BottomTxt = styled.div`
   margin-top: 60px;
@@ -124,4 +125,4 @@ const BottomTxt = styled.div`
   font-size: 13px;
   `;
 
-export { Body, BodyImg, LoginForm, LogButton, LoginFormH1, BottomTxt, SigninForm, SigninFormH1, SignBody, TxtBox, TxtbInput };
+export { Body, BodyImg, LoginForm, LogButton, LoginFormH1, BottomTxt, SigninForm, SigninFormH1, SignBody, TxtBox, TxtbInput, Error };

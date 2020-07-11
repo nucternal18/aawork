@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/react-router-dom": "^5.1.5",
     "axios": "^0.19.2",
     "prop-types": "^15.7.2",
     "ra-data-json-server": "^3.5.3",
@@ -15,7 +16,10 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "typescript": "^3.9.6",
+    "uuid": "^8.2.0",
+    "validator": "^13.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,5 +42,14 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.20",
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "@types/styled-components": "^5.1.0",
+    "@types/uuid": "^8.0.0",
+    "@types/validator": "^13.1.0"
+  }
 }

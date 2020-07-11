@@ -1,0 +1,36 @@
+{
+  "name": "aawork",
+  "version": "1.0.0",
+  "description": "CMS application",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index",
+    "server": "cross-env NODE_ENV=development nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gnbiggs/aawork.git"
+  },
+  "author": "Ade&Ash",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gnbiggs/aawork/issues"
+  },
+  "homepage": "https://github.com/Gnbiggs/aawork#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.2.1",
+    "puppeteer": "^4.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
