@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "server": "npm run server --prefix aawork-server",
-    "client": "npm start --prefix aawork-client",
+    "client": "npm start --prefix aawork-client2",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": "https://github.com/nucternal18/aawork.git",

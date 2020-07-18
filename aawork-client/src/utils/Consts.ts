@@ -1,1 +1,0 @@
-export const DEFAULT_USER_AUTH = { userid: 0, email: "", token: "" };
